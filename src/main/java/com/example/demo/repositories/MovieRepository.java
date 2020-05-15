@@ -15,9 +15,6 @@ import java.util.Map;
  * @author mh
  * @since 24.07.12
  */
-//@RepositoryRestResource(collectionResourceRel = "movies", path = "movies")
-
-// tag::repository[]
 public interface MovieRepository extends Neo4jRepository<Movie,Long> {
     // the "0" parameter is a workaround for a bug in SDN
     Movie findByTitle(@Param("0") String title);
@@ -30,5 +27,4 @@ public interface MovieRepository extends Neo4jRepository<Movie,Long> {
     @Query("match (u:Person) where u.name = $name return u")
     Person getByName(@Param("name") String name);
 }
-// end::repository[]
 
