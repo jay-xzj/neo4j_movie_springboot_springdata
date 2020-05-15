@@ -1,11 +1,10 @@
 package com.example.demo.domain;
 
 import org.neo4j.ogm.annotation.*;
-import org.springframework.stereotype.Indexed;
 
 import java.util.Collection;
 
-// tag::movie[]
+
 @NodeEntity
 public class Movie {
     @Id
@@ -20,8 +19,6 @@ public class Movie {
 
     @Relationship(type = "ACTED_IN", direction = Relationship.INCOMING)
     Collection<Role> roles;
-
-// end::movie[]
 
     public Movie() {
     }
